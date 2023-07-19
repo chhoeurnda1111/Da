@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@700&display=swap');
+.a{
+    color: var(--text-gray-900, #18191F);
+/* Lead / Lead 1 */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 177.778% */
+    
+}
+.a1{
+    color: var(--text-title, #2E2E2E);
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 77.5px; /* 121.094% */
+}
+.a4{
+    color: var(--text-title, #2E2E2E);
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40.5px; /* 121.094% */
+}
+.a3{
+    color: var(--text-body, #808080);
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 175% */
+letter-spacing: 0.8px;
+}
+.text1{
+color: var(--text-title, #2E2E2E);
+font-family: Poppins;
+font-size: 64px;
+font-style: normal;
+font-weight: 700;
+line-height: 77.5px; /* 121.094% */
+}
+.button1{
+  
+    width: 160px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #18191F;
+    color: #ffffff;
+    box-shadow: 0px 0px 64px 0px rgba(176, 0, 0, 0.30);
+}
+.button2{
+    width: 160px;
+    height: 45px;
+    border-radius: 8px;
+}
+.box1{
+    width: 350px;
+height: 372px;
+top: 248px;
+left: 254px;
+border-radius: 8px;
+gap: 32px;
+box-shadow: 0px 10px 20px 0px #29292A12;
+
+
+}
+.box1.a{
+    width: Hug (286px);
+    height: Hug (268px);
+    top: 104px;
+    left: 32px;
+    gap: 16px;
+    
+
+}
+.TY{
+    width: Hug (186px);
+    height: Hug (168px);
+    top: 10px;
+    left: 3px;
+    gap: 16px;
+}
+.box1.b{
+    width: Hug (254px);
+height: Hug (268px);
+gap: 24px;
+
+    
+
+}
+.box1.c{
+    width: 254px;
+height: 192px;
+
+
+}
+.bigboxx{
+    width: 1194px;
+height: 985px;
+top: 2610px;
+left: 1530px;
+
+}
+.imagebox1{
+width: 120px;
+height: 120px;
+top: 7px;
+left: 64px;
+
+}
+.box1.d{
+    width: Hug (127px);
+height: Hug (52px);
+
+
+}
+.box1dtext{
+    
+font-family: Poppins;
+font-size: 18px;
+font-weight: 700;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: #18191F;
+;
+
+}
+.box2dtext{
+    
+font-family: Inter;
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.boximage{
+    background-image: url("../../../assets/images/symble1big.PNG");
+    background-size: 20%;
+    background-repeat: no-repeat;
+
+}
+.lastbox1{
+    width: 1156.452880859375px;
+height: 392px;
+top: 3856px;
+left: 167.0802001953125px;
+border-radius: 16px;
+background: #F7FAFE;
+;
+ 
+    
+}
+.cz{
+    font-family: Poppins;
+font-size: 40px;
+font-weight: 600;
+line-height: 88px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+
+.phone1{
+    
+    font-size: 10pt;
+    margin-bottom: 20px;
+}
+
+

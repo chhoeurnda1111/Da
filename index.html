@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+<head>
+    <script async custom-element="amp-call-tracking" src="https://cdn.ampproject.org/v0/amp-call-tracking-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/style-layout/tab_panels_with_amp-selector/index.html">
+  <!-- Site made with Mobirise Website Builder v5.8.14, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.8.14, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <title>Home</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+    <!-- ## Setup -->
+    <!-- Import `amp-selector` component in the header which we'll use to implement the tab switching. -->
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+<body>
+    <section>
+        <div class="mb-4">
+            
+        </div>
+        
+    </section>
+    <section data-bs-version="5.1" class="pricing2 cid-tK6utsIVRx" id="pricing2-t">
+    
+
+        <style amp-custom>
+            :root {
+              --color-primary: #005AF0;
+              --space-1: .5rem;  /* 8px */
+              --space-4: 2rem;   /* 32px */
+            }
+    
+            /* Styles for the flex layout based tabs */
+            amp-selector[role=tablist].tabs-with-flex {
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            amp-selector[role=tablist].tabs-with-flex [role=tab] {
+                flex-grow: 1;
+                /* custom styling, feel free to change */
+                text-align: center;
+                padding: var(--space-1);
+                
+            }
+            amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
+                outline: none;
+                /* custom styling, feel free to change */
+                border-bottom: 2px solid var(--color-primary);
+            }
+            amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
+                display: none;
+                width: 100%;
+                order: 1; /* must be greater than the order of the tab buttons to flex to the next line */
+                /* custom styling, feel free to change */
+                padding: var(--space-4);
+            }
+            amp-selector[role=tablist].tabs-with-flex [role=tab][selected] + [role=tabpanel] {
+                display: block;
+            }
+    
+            /* Styles for the selector based tabs */
+            amp-selector[role=tablist].tabs-with-selector {
+                display: flex;
+            }
+            amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
+                outline: none;
+                /* custom styling, feel free to change */
+                border-bottom: 2px solid var(--color-primary);
+            }
+            amp-selector[role=tablist].tabs-with-selector {
+                display: flex;
+            }
+            amp-selector[role=tablist].tabs-with-selector [role=tab] {
+              /* custom styling, feel free to change */
+              width: 100%;
+              text-align: center;
+              padding: var(--space-1);
+            }
+            amp-selector.tabpanels [role=tabpanel] {
+              display: none;
+              /* custom styling, feel free to change */
+              padding: var(--space-4);
+            }
+            amp-selector.tabpanels [role=tabpanel][selected] {
+              outline: none;
+              display: block;
+            }
+    
+        </style>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <amp-selector class="tabs-with-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)" keyboard-select-mode="focus">
+                            <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected>Hosting</div>
+                            <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">Domain</div>
+                            <div id="sample3-tab3" role="tab" aria-controls="sample3-tabpanel3" option="2">SEO </div>
+                            <div id="sample4-tab4" role="tab" aria-controls="sample4-tabpanel4" option="3">Email</div>
+                          </amp-selector>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <amp-selector id="myTabPanels" class="tabpanels">
+                            <div id="sample3-tabpanel1" role="tabpanel" aria-labelledby="sample3-tab1" option selected><h1 class="text1">Premium Web Hosting for Your Website</h1>
+                            <br><br>
+                            <p class="a3">Blazing fast web hosting for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-4 " >
+                                    <button type="button" class="btn   button1">Small button</button>
+                                </div>
+                                <div class="col-md-4" >
+                                    <button type="button" class="btn btn-outline-secondary button2">Secondary</button>
+                                </div>
+                                <div class="col-md-4" >
+                                    
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                            <div id="sample3-tabpanel2" role="tabpanel" aria-labelledby="sample3-tab2" option>Tab two content... </div>
+                            <div id="sample3-tabpanel3" role="tabpanel" aria-labelledby="sample3-tab3" option>Tab three content... </div>
+                            <div id="sample4-tabpanel4" role="tabpanel" aria-labelledby="sample4-tab4" option>Tab three content... </div>
+                          </amp-selector>
+                    </div>
+                </div>
+               
+                  
+                  
+            </div>
+            <div class="col-md-6">
+                <amp-img on="tap:lightbox1" role="button" tabindex="0" src="/assets/images/model-girl1.png" alt="Picture of a dog" title="Picture of a dog, view in lightbox" layout="responsive" width="300" height="246"></amp-img>
+                <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+                <!-- <amp-img alt=" "src="/assets/images/model-girl1.png" width="1px" height="1px" layout="responsive"></amp-img> -->
+                <!-- <img src="/assets/images/model-girl1.png" alt="" width="90px" height="500px"> -->
+            </div>
+        </div>
+        
+    </div> 
+    </section>
+
+
+
+  <section data-bs-version="5.1" class="menu menu1 cid-tK6u6E0ePU" once="menu" id="menu1-s">
+    
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container" >
+            
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="#"><img src="./assets/images/logotop.png" alt="" style="width: 100px;"></a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item" ><a class="nav-link link text-black display-4" href="#">
+                            Our Service</a></li>
+                    
+                </ul>
+                <div style="margin-right: 2.5cm;">
+                    
+                </div>
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item" ><a class="nav-link link text-black display-4" href="#">
+                            About</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black display-4" href="#">
+                            Blog&New</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black display-4" href="#">
+                            Contacts</a></li>
+                    
+                </ul>
+                <div style="margin-right: 2.5cm;">
+                    
+                </div>
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item" ><a class="nav-link link text-black display-4" href="#">
+                        Account </a>
+                    </li>
+                  
+                    
+                   
+                </ul>
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                   
+                    <li class="nav-item phone1"><a class="nav-link link text-black display-4" href="#">
+                    <amp-call-tracking config="https://example.com/calltracking.json">
+                    <a href="tel:2349067322844">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16" style="margin-right: 10px;">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg></i>+2349067322844</a></a>
+                    </amp-call-tracking>
+                    </li>
+                   
+                    
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+
+
+<section data-bs-version="5.1" class="content4 cid-tK6vRClmvm" id="content4-v">
+    
+
+    <div class="row">
+		<div class="col-md-6">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="title col-md-12 col-lg-10">
+                        <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2 a1">
+                            <strong>True Cloud Web  Hosting</strong>
+                        </h3>
+                        <h4 class="a">
+                            True Cloud Web Hosting All of the hosting packages we offer are deployed instantly on our SSD powered cloud. 
+                            We don’t use dedicated servers that operate on single pieces of hardware. 
+                            Our entire infrastructure is built to be reliable, secure, and scalable.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="./assets/images/cpanellogo.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="./assets/images/securedlogo.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="./assets/images/litespeedlogo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="./assets/images/softalogo.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="./assets/images/wordpresslogo.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="./assets/images/cloudflarelogo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+		</div>
+	</div>
+    
+   
+</section>
+
+<!-- <section data-bs-version="5.1" class="clients1 cid-tK6wesgW5P" id="clients1-w">
+    
+    <div class="images-container container">
+        <div class="mbr-section-head">
+            
+            
+            
+        </div>
+        
+    </div>
+</section> -->
+
+<section data-bs-version="5.1" class="features1 cid-tK6rUE5nOC" id="features1-q">
+    
+
+    
+    
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-12 col-lg-9">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Features</strong>
+                </h3>
+                
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper" style="width: 100px; margin-left: 2cm;margin-left: 2cm" >
+                            <img src="assets/images/Uptime.PNG" alt="Mobirise Website Builder">
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>99.9% Uptime</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">We Keep Your Web build Online 24x7x365.
+                            Downtime not only costs you lost visitors but also damages your reputation and search engine rankings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper" style="width: 100px; margin-left: 2cm;">
+                            <img src="./assets/images/blazwebhostinglogo.PNG" alt="">
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Blazing Fast Web Hosting</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">We Keep Your Web build Online 24x7x365.
+                            Downtime not only costs you lost visitors but also damages your reputation and search engine rankings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper" style="width: 100px; margin-left: 2cm;">
+                            <img src="./assets/images/freesslcertificate.PNG" alt="">
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Free SSL Certificates</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">We Keep Your Web build Online 24x7x365.
+                            Downtime not only costs you lost visitors but also damages your reputation and search engine rankings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper" style="width: 100px; margin-left: 2cm;">
+                            <img src="./assets/images/friendlysupport.PNG" alt="">
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>24x7 Friendly Support</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">We Keep Your Web build Online 24x7x365.
+                            Downtime not only costs you lost visitors but also damages your reputation and search engine rankings.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<div class="container row">
+    <div class="col-4">
+
+    </div>
+    <div class="col-4" style="text-align: center;">
+        <h1 class="a4">Ready to get started with Lemon Wares?</h1>
+        <p >Choose the package that suits you</p>
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+<!-- Priceing -->
+
+
+
+<section data-bs-version="5.1" class="pricing2 cid-tK6utsIVRx" id="pricing2-t">
+    
+   
+    <amp-selector class="tabs-with-flex" role="tablist" keyboard-select-mode="focus">
+
+         <!-- Price 1 -->
+
+    <div id="tab1" role="tab" aria-controls="tabpanel1" option selected style="font-weight: 500; font-size: 20pt;">
+            Basic
+    </div>
+    <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1"> 
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-12 col-md-6 align-center col-lg-4 ">
+                    <div class="plan " style="background-color: #edf0f4; border-radius: 16px;">
+                        <div class="plan-header">
+                            <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                                <strong>Starter</strong>
+                            </h6>
+                            <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                            <div class="plan-price">
+                                <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$2.80</strong></p>
+                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                                </p>
+                            </div>
+                            <div class="mbr-section-btn text-center">
+                               
+                                <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                            </div>
+                            
+                        </div>
+                        <div class="plan-body">
+                            <div class="plan-body">
+                                <div class="plan-list mb-4">
+                                    <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2GB SSD
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>10GB Bandwidth
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>15 Email Accounts
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Unlimited Database
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>4 Subdomainsr</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>1 Parked Domain</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2 Websites</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Free SSL</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>SoftaculousL</li>
+                                        
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 align-center col-lg-4 ">
+                    <div class="plan " style="background-color: #edf0f4; border-radius: 16px;">
+                        <div class="plan-header">
+                            <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                                <strong>Standard</strong>
+                            </h6>
+                            <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                            <div class="plan-price">
+                                <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$4.20</strong></p>
+                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                                </p>
+                            </div>
+                            <div class="mbr-section-btn text-center">
+                               
+                                <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                            </div>
+                            
+                        </div>
+                        <div class="plan-body">
+                            <div class="plan-body">
+                                <div class="plan-list mb-4">
+                                    <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2GB SSD
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>10GB Bandwidth
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>15 Email Accounts
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Unlimited Database
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>4 Subdomainsr</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>1 Parked Domain</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2 Websites</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Free SSL</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>SoftaculousL</li>
+                                        
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 align-center col-lg-4 ">
+                    <div class="plan " style="background-color: #edf0f4; border-radius: 16px;">
+                        <div class="plan-header">
+                            <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                                <strong>Suprem</strong>
+                            </h6>
+                            <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                            <div class="plan-price">
+                                <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$7.00</strong></p>
+                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                                </p>
+                            </div>
+                            <div class="mbr-section-btn text-center">
+                               
+                                <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                            </div>
+                            
+                        </div>
+                        <div class="plan-body">
+                            <div class="plan-body">
+                                <div class="plan-list mb-4">
+                                    <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                        <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2GB SSD
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>10GB Bandwidth
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>15 Email Accounts
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Unlimited Database
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>4 Subdomainsr</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>1 Parked Domain</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>2 Websites</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>Free SSL</li>
+                                        </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                          </svg>SoftaculousL</li>
+                                        
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div> 
+
+        <!-- Price 2 -->
+
+    </div>
+    <div id="tab1" role="tab" aria-controls="tabpanel1" option style="font-weight: 500; font-size: 20pt;">
+        Premium
+</div>
+<div id="tabpanel1" role="tabpanel" aria-labelledby="tab1"> 
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-12 col-md-6 align-center col-lg-4 ">
+                <div class="plan " style="background-color: rgb(88, 178, 234); border-radius: 16px;">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Starter</strong>
+                        </h6>
+                        <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                        <div class="plan-price">
+                            <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$8.88</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                           
+                            <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                        </div>
+                        
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-body">
+                            <div class="plan-list mb-4">
+                                <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2GB SSD
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>10GB Bandwidth
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>15 Email Accounts
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Unlimited Database
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>4 Subdomainsr</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>1 Parked Domain</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2 Websites</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Free SSL</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>SoftaculousL</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 align-center col-lg-4 ">
+                <div class="plan "style="background-color: rgb(88, 178, 234); border-radius: 16px;">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Standard</strong>
+                        </h6>
+                        <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                        <div class="plan-price">
+                            <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$25.00</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                           
+                            <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                        </div>
+                        
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-body">
+                            <div class="plan-list mb-4">
+                                <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2GB SSD
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>10GB Bandwidth
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>15 Email Accounts
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Unlimited Database
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>4 Subdomainsr</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>1 Parked Domain</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2 Websites</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Free SSL</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>SoftaculousL</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 align-center col-lg-4 ">
+                <div class="plan " style="background-color: rgb(88, 178, 234); border-radius: 16px;">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Suprem</strong>
+                        </h6>
+                        <p style="text-align: left; margin-left:2.5cm;">with all your customers via all conversation channels in one central dashboard.</p>
+                        <div class="plan-price">
+                            <p class=" mbr-fonts-style m-0" style="font-size: 30pt;"><strong>$99.00</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                           
+                            <a href="" class="btn btn-outline-secondary display-4">Choose this Plan</a>
+                        </div>
+                        
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-body">
+                            <div class="plan-list mb-4">
+                                <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2GB SSD
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>10GB Bandwidth
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>15 Email Accounts
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Unlimited Database
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>4 Subdomainsr</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>1 Parked Domain</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>2 Websites</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>Free SSL</li>
+                                    </li><li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="margin-right: 20px;">
+                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                      </svg>SoftaculousL</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>             
+            
+        </div> </div>
+        <!-- <div id="tab3" role="tab" aria-controls="tabpanel3" option>Tab three</div>
+        <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3"> Good2<img src="https://unsplash.com/s/photos/angkor-wat" alt=""> </div> -->
+      </amp-selector>
+    
+   
+</section>
+
+<!-- Real Stories from Real Customers -->
+<div class="container-fluid " style="margin-bottom: 5cm;">
+	<div class="row ">
+		<div class="col-md-6 ">
+            
+			<div class="row boximage">
+				<div class="col-md-12 ">
+                    <h1 class="a1" style="margin-left: 2cm;">Real Stories from Real Customers</h1>
+				</div>
+			</div>
+            
+			<div class="row">
+                
+                <div class="col-md-12 box1 " style="margin-left: 6cm; margin-top: 0.5cm;">
+                    <div class="imagebox1" style="margin-left: 2cm;">
+                        <img src="./assets/images/imageboxa.png" alt="" width="100px">
+                    </div>
+                   
+                    <div class="box1.a">
+                        
+                        <div class="box1.b" style="margin-left: 20px;">
+                            <div class="box1.c">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="./assets/images/symble1.PNG" alt="" style="width: 20px;">
+                                    </div>
+                                    <div class="col-10">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elem
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box1.d" style="margin-top: 30px; margin-left: 70px;">
+                        <h3 class="box1dtext">Floyd Miles</h3>
+                        <p class="box2dtext">Vice President, CLI</p>
+
+                    </div>
+				</div>
+				
+			</div>
+
+			
+			
+		</div>
+
+<!-- Real Stories from Real Customers nexk part-->
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12" style="margin-top: 2cm;">
+                    <div class="col-md-12 box1 " style="margin-right: 6cm; margin-top: 0.5cm;">
+                        <div class="imagebox1" style="margin-left: 2cm;">
+                            <amp-img
+                                alt="A view of the sea"
+                                src="./assets/images/imageboxb.png"
+                                width="900"
+                                height="675"
+                                layout="responsive"
+                                >
+                                </amp-img>
+                        </div>
+                       
+                        <div class="box1.a">
+                            
+                            <div class="box1.b" style="margin-left: 20px;">
+                                <div class="box1.c">
+                                    <div class="row" style="margin-bottom: 1cm;">
+                                        <div class="col-2">
+                                            <img src="./assets/images/symble1.PNG" alt="" style="width: 20px;">
+                                        </div>
+                                        <div class="col-10">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elem
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box1.d" style="margin-top: 30px; margin-left: 70px;">
+                            <h3 class="box1dtext">Jane Cooper</h3>
+                            <p class="box2dtext">CEO, JPNL</p>
+    
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+                    <div class="col-md-12 box1 " style="margin-top: 2cm; margin-top: 0.5cm;">
+                        <div class="imagebox1" style="margin-left: 2cm;">
+                            <amp-img
+                                alt="A view of the sea"
+                                src="./assets/images/imageboxc.png"
+                                width="900"
+                                height="675"
+                                layout="responsive"
+                                >
+                                </amp-img>
+                        </div>
+                       
+                        <div class="box1.a">
+                            
+                            <div class="box1.b" style="margin-left: 20px;">
+                                <div class="box1.c">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="./assets/images/symble1.PNG" alt="" style="width: 20px;">
+                                        </div>
+                                        <div class="col-10">
+                                            LemonWares saved our time in Hosting my company page.
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box1.d" style="margin-top: 30px; margin-left: 70px;">
+                            <h3 class="box1dtext">Kristin Watson</h3>
+                            <p class="box2dtext">Co-Founder, LeeveOn Branding</p>
+    
+                        </div>
+                    </div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+
+    <div class="row">
+		<div class="col-md-6">
+
+        <div class="row" style="margin-top: 1cm;">
+                        
+                        <div class="col-md-8">
+                            <h1 class="a4">We serve over 100
+                                Nigerian Websites</h1>
+                                <p class="a">
+                                    Connect LemonWares with your favourite tools that you use daily and keep things on track.
+                                </p>
+                        </div>
+                        <div class="col-md-4">
+                            
+                        </div>
+                    </div>
+		</div>
+		<div class="col-md-6" style="margin-top: 1cm;">
+
+            <div class="row">
+				<div class="col-md-4">
+                    <img src="./assets/images/imageboxb.png" alt="" style="width: 100px;">
+				</div>
+                <div class="col-md-4">
+                    <img src="./assets/images/imageboxe.png" alt="" style="width: 100px;">
+				</div>
+                <div class="col-md-4">
+                    <img src="./assets/images/imageboxd.png" alt="" style="width: 100px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4" style="margin-top: 10px;">
+                    <img src="./assets/images/imageboxc.png" alt="" style="width: 100px;">
+				</div>
+                <div class="col-md-4">
+                    <img src="./assets/images/imageboxf.png" alt="" style="width: 100px;">
+				</div>
+                <div class="col-md-4">
+                    <img src="./assets/images/imageboxa.png" alt="" style="width: 100px;">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<!-- section 9 -->
+
+<div class="container-fluid" style="margin-bottom: 5cm;">
+	<div class="row lastbox1">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			 <h1 class="cz">We're here to make your website awesome.</h1>
+			<button type="button" class="btn btn-success" style="margin-left: 7cm;">
+                    </i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                  </svg>
+				    <div class="" style="margin:5px"></div>Get in touch with us
+			</button>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+  
+
+
+<!-- Footer -->
+<section data-bs-version="5.1" class="footer1 cid-tK6tZcVA6O" once="footers" id="footer1-r">
+
+    
+
+    
+    
+    <div class="container">
+        <div class="row mbr-white">
+            <div class="col-12 col-md-6 col-lg-3">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <img src="./assets/images/logofotter.png" alt="">
+                </h5>
+                <ul class="list mbr-fonts-style display-4" style="margin-top: 50px;">
+                    <li class="mbr-text text-light item-wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elem</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="margin-right: -50px;">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <strong>Service</strong>
+                </h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Domain</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Shared Hosting</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Cloud Hosting</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Private Hosting</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="margin-right: -50px;">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <strong>Hosting</strong>
+                </h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Cheap Hosting</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Hosting Wordpress</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Email Hosting</a></li></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Hosting Unlimited</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="margin-right: -50px;">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <strong>Company</strong>
+                </h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">About</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Career</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Contact Us</a></li>
+                   
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="margin-right: -1000px;">
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
+                    <a class="text-light display-4" href="#"><strong>Help</strong></a>
+                    
+                </h5>
+                <ul class="list mbr-fonts-style display-4">
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">FAQ</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Help support</a></li>
+                    <li class="mbr-text item-wrap"><a class="text-light display-4" href="#">Help support</a></li>
+                    
+                </ul>
+            </div>
+           
+            
+        </div>
+        
+    </div>
+    <!-- <div class="row">
+        <div class="col-12">
+            <p>All rights reserved.</p><a href="">Terms & Conditions</a> | <a href="">Privacy Policy</a> 
+        </div>
+        
+    </div> -->
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+</body>
+</html>
